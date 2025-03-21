@@ -1,0 +1,213 @@
+/* 寶石迷宮 - 網頁版樣式表 */
+
+/* 全局樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* 遊戲容器 */
+#game-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 90vh;
+    max-height: 600px;
+    background-color: #16213e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* 遊戲UI */
+#game-ui {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #0f3460;
+    color: #e94560;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#game-canvas {
+    flex-grow: 1;
+    background-color: #16213e;
+    cursor: pointer;
+}
+
+/* 遊戲控制按鈕 */
+#game-controls {
+    display: none; /* 在移動設備上顯示 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #0f3460;
+}
+
+#horizontal-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    margin: 5px 0;
+}
+
+#game-controls button {
+    width: 60px;
+    height: 40px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#game-controls button:hover {
+    background-color: #ff6b81;
+}
+
+#game-controls button:active {
+    background-color: #c73e59;
+}
+
+/* 遊戲畫面 */
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(22, 33, 62, 0.95);
+    z-index: 10;
+    padding: 20px;
+    text-align: center;
+}
+
+.screen h1 {
+    font-size: 3em;
+    color: #e94560;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.screen h2 {
+    font-size: 2em;
+    color: #e94560;
+    margin-bottom: 20px;
+}
+
+.screen p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.screen button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #e94560;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.screen button:hover {
+    background-color: #ff6b81;
+}
+
+.screen button:active {
+    background-color: #c73e59;
+}
+
+/* 隱藏所有畫面，除了開始畫面 */
+#instructions-screen,
+#level-complete-screen,
+#game-over-screen,
+#pause-screen {
+    display: none;
+}
+
+/* 寶石樣式 */
+.gem {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.blue {
+    background-color: #4d79ff;
+    box-shadow: 0 0 5px #4d79ff;
+}
+
+.green {
+    background-color: #4dff4d;
+    box-shadow: 0 0 5px #4dff4d;
+}
+
+.purple {
+    background-color: #b34dff;
+    box-shadow: 0 0 5px #b34dff;
+}
+
+.yellow {
+    background-color: #ffff4d;
+    box-shadow: 0 0 5px #ffff4d;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #game-controls {
+        display: flex;
+    }
+    
+    #game-header {
+        font-size: 0.9em;
+    }
+    
+    .screen h1 {
+        font-size: 2em;
+    }
+    
+    .screen h2 {
+        font-size: 1.5em;
+    }
+    
+    .screen p {
+        font-size: 1em;
+    }
+    
+    .screen button {
+        font-size: 1em;
+    }
+}
